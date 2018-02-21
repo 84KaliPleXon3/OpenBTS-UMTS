@@ -4,11 +4,11 @@
 ### Contents
 
 * [Introduction](#introduction)
-* [Release Features/Capabilities](#release-features-capabilities)
+* [Release Features/Capabilities](#release-featurescapabilities)
 * [Supported Hardware](#supported-hardware)
 	- [Ettus Research USRP](#ettus-research-usrp)
 	- [CPU requirements](cpu-requirements)
-* [Phones/Modems tested](#phones-modems-tested)
+* [Phones/Modems tested](#phonesmodems-tested)
 * [SIMS and Authentication](#sims-and-authentication)
 * [Build, Install, Setup, and Run Instructions](#build-install-setup-and-run-instructions)
 	- [Prerequisites](#prerequisites)
@@ -583,6 +583,8 @@ Sometimes it is necessary to give the program the number of the card programmer:
 `./pySim-read.py -p 0`      or       `./pySim-read.py -p 1`
 
 Now we are ready to program the USIM finally! :-)
+
+### Programming the SIM card
 
 **Important:**
 
