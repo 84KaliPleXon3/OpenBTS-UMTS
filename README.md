@@ -453,8 +453,6 @@ sudo python -m pip install serial pycrypto
 
 ### Providers
 
-### (Under test! - will remove this notice when we see if this works).
-
 **sysmoUSIM-SJS1 4FF/nano SIM + USIM Card (10-pack):**
 
 [http://shop.sysmocom.de/products/sysmousim-sjs1-4ff](http://shop.sysmocom.de/products/sysmousim-sjs1-4ff)
@@ -584,6 +582,15 @@ Sometimes it is necessary to give the program the number of the card programmer:
 
 Now we are ready to program the USIM finally! :-)
 
+### Sysmo USIM Tool
+
+Get Sysmo USIM tool:
+
+`git clone git://git.sysmocom.de/sysmo-usim-tool`
+
+We will need: `sysmo-usim-tool.sjs1.py`
+
+
 ### Programming the SIM card
 
 **Important:**
@@ -598,24 +605,17 @@ To change branch to `zecke/tmp2`, use this command:
 Example to program a SysmoUSIM-SJS1 card:
 
 ```
-./pySim-prog.py -p 0 -x 101 -y 02 -t sysmoUSIM-SJS1 -i 101020000000003 -s 8988211000000012345 --op=11111111111111111111111111111111 -k 8BAF473F2F8FD09487CCCBD7097C6862 -a 53770832
-Insert card now (or CTRL-C to cancel)
-Generated card parameters :
- > Name    : Magic
- > SMSP    : e1ffffffffffffffffffffffff0581005155f5ffffffffffff000000
- > ICCID   : 8988211000000012345
- > MCC/MNC : 101/2
- > IMSI    : 101020000000003
- > Ki      : 8BAF473F2F8FD09487CCCBD7097C6862
- > OPC     : 8e27b6af0e692e750f32667a3b14605d
- > ACC     : None
-
-Programming ...
-Done !
+./pySim-prog.py -p 0 --mcc 101 --mnc 02 -t sysmoUSIM-SJS1 --imsi 101020000000003 --iccid 8988211000000012345 --ki 8BAF473F2F8FD09487CCCBD7097C6862 --pin-adm 53770832
 ```
 
-Where `-a` is the part where you need to give the `ADM1` for this specific SIM card. Again, if you are not using the `zecke/tmp2` branch or not giving the proper `ADM1` pin when you try to program the Sysmo-USIm S1J1 SIMs, you will likely end up with a permamnently damaged card!
+**IMPORTANT:** Where `-a` is the part where you need to give the `ADM1` for this specific SIM card. Again, if you are not using the `zecke/tmp2` branch or not giving the proper `ADM1` pin when you try to program the Sysmo-USIm S1J1 SIMs, you will likely end up with a permamnently damaged card!
 
+Now lets set COMP128v1 algorithm and disable USIM application in order to make it work with OpenBTS or OpenBTS-UMTS:
+
+`./sysmo-usim-tool.sjs1.py --adm1 ADM1_KEY -T COMP128v1:COMP128v1 --classic`
+
+
+**Reference:** [Sysmo USIM Manual](https://www.sysmocom.de/manuals/sysmousim-manual.pdf)
 
 ### Adding subscribers
 
