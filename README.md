@@ -12,9 +12,9 @@
 * [SIMS and Authentication](#sims-and-authentication)
 * [Build, Install, Setup, and Run Instructions](#build-install-setup-and-run-instructions)
 	- [Prerequisites](#prerequisites)
+	- [Ettus Research USRP](#etthus-research-usrp)
 	- [Obtaining the Source](#obtaining-the-source)
 	- [Configure and Build](#configure-and-build)
-	- [Ettus Research USRP](#etthus-research-usrp)
 	- [Running OpenBTS-UMTS](#running-openbts-umts)
 	
 - [Programming your own USIM card](#programming-your-own-usim-card)
@@ -291,36 +291,7 @@ sudo make install
 
   - Valid SIM with a known IMSI and Ki values. These values must be
     added to the subscriber registry.
-
-### Obtaining the Source
-
-OpenBTS-UMTS is available on GitHub, ensure that you have Git version
-1.8.2+ installed on your system.
-
-    git clone https://github.com/mgp25/OpenBTS-UMTS
-
-The `NodeManager` component is setup as a git submodule and can be added
-with the following commands. Note that the current configuration
-requires a GitHub account to check out the submodule.
-
-    git submodule init
-    git submodule update
-
-### Configure and Build
-
-You are now ready to build OpenBTS-UMTS, from your checked-out
-OpenBTS-UMTS directory:
-
-```
-sudo NodeManager/install_libzmq.sh
-./autogen.sh
-./configure
-make
-sudo make install
-```
-
-**Note:** When running `sudo NodeManager/install_libzmq.sh` it might throw an error (source not found 404), you can ignote it.
-
+    
 #### Ettus Research USRP
 
 USRP Driver:
@@ -369,7 +340,37 @@ You will need to go into the TransceiverRAD1 directory and run the
 following script right before running the OpenBTS-UMTS binary in the
 apps directory (OpenBTS-UMTS/apps/):
 
-`  sudo ./clkit_61_44mhz.sh`
+`sudo ./clkit_61_44mhz.sh`
+
+### Obtaining the Source
+
+OpenBTS-UMTS is available on GitHub, ensure that you have Git version
+1.8.2+ installed on your system.
+
+    git clone https://github.com/mgp25/OpenBTS-UMTS
+
+The `NodeManager` component is setup as a git submodule and can be added
+with the following commands. Note that the current configuration
+requires a GitHub account to check out the submodule.
+
+    git submodule init
+    git submodule update
+
+### Configure and Build
+
+You are now ready to build OpenBTS-UMTS, from your checked-out
+OpenBTS-UMTS directory:
+
+```
+sudo NodeManager/install_libzmq.sh
+./autogen.sh
+./configure
+make
+sudo make install
+```
+
+**Note:** When running `sudo NodeManager/install_libzmq.sh` it might throw an error (source not found 404), you can ignote it.
+
 
 #### Setup
 
