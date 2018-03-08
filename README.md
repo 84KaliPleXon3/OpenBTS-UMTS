@@ -189,13 +189,11 @@ processors are too weak to support the current implementation
 ## Phones/Modems tested
 
   - Works
-      - iPhones (3, 4, and 5)
+      - iPhones (3, 4, 5 and 7)
       - HTC Velocity
       - Samsung Galaxy
       - Palm Pre
       - a variety of Multitech modems
-  - Doesn't work
-      - iPhone 7
 
 ## SIMS and Authentication
 
@@ -619,6 +617,8 @@ Now lets set COMP128v1 algorithm and disable USIM application in order to make i
 **Reference:** [Sysmo USIM Manual](https://www.sysmocom.de/manuals/sysmousim-manual.pdf)
 
 ### Adding subscribers
+
+From `subscriberRegistry` directory.
 
 `sudo ./nmcli.py sipauthserve subscribers create "name" imsi msisdn ki`
 
