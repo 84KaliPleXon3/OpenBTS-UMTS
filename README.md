@@ -24,6 +24,7 @@
 	- [Get the software (PySIM, PCSCd, Pyscard)](#get-the-software-pysim-pcscd-pyscard)
 	- [Programming the SIM card](#programming-the-sim-card)
 	- [Adding subscribers](#adding-subscribers)
+- [References](#references)
 
 
 	
@@ -627,7 +628,7 @@ al string “IMSI.”
 
 Example (without Ki, we recommend you to set Ki too): 
 
-<img src="https://raw.githubusercontent.com/mgp25/OpenBTS-UMTS/master/assets/nmcli.jpg" width=90>
+<img src="https://raw.githubusercontent.com/mgp25/OpenBTS-UMTS/master/assets/nmcli.jpg" width=600>
 
 Values imsi, msisdn and ki should be taken from your SIM-card.
 
@@ -636,3 +637,7 @@ You can use the following command to show all subscribers:
 `./nmcli.py sipauthserve subscribers read`
 
 Now, connect your phone to the network and test 3G. That's it!
+
+## References
+
+- [Getting Started with OpenBTS. Michael Iedema.](http://openbts.org/site/wp-content/uploads/ebook/Getting_Started_with_OpenBTS_Range_Networks.pdf)
