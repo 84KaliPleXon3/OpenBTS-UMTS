@@ -618,10 +618,16 @@ Now lets set COMP128v1 algorithm and disable USIM application in order to make i
 
 ### Adding subscribers
 
-From `subscriberRegistry` directory.
+`nmcli.py` can be found in the `NodeManager` folder from OpenBTS-UMTS.
+
+**Note:** The IMSI field consists of the numeric IMSI prefixed with the liter‐
+al string “IMSI.”
 
 `sudo ./nmcli.py sipauthserve subscribers create "name" imsi msisdn ki`
 
+Example (without Ki, we recommend you to set Ki too): 
+
+<img src="https://raw.githubusercontent.com/mgp25/OpenBTS-UMTS/master/assets/nmcli.jpg" width=90>
 
 Values imsi, msisdn and ki should be taken from your SIM-card.
 
