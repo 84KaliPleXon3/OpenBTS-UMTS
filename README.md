@@ -1,6 +1,8 @@
 # OpenBTS-<img src="https://raw.githubusercontent.com/mgp25/OpenBTS-UMTS/master/assets/umts.png" width=90>
 
 
+<img src="https://raw.githubusercontent.com/mgp25/OpenBTS-UMTS/master/assets/OpenBTS-UMTS.png" width=90>
+
 ### Contents
 
 * [Introduction](#introduction)
